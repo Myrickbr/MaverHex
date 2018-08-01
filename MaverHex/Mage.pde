@@ -10,18 +10,21 @@ class Mage{
   int yPos;
   int xSpeed;
   int ySpeed;
-  int xVelo;
-  int yVelo;
+  int xAcc;
+  int yAcc;
   boolean [] action = {true, false, false, false, false}; 
+  boolean canJump;
+  
   
   Mage(){
    health = 100; 
    xPos = constrain(10, 50, 750); 
    yPos = constrain(875, 700, 875);
    xSpeed = 0;
-   ySpeed = -40;
-   xVelo = 0;
-   yVelo = 10;
+   ySpeed = 0;
+   xAcc = 0;
+   yAcc = 10;
+   canJump = true;
   }
   
   void attack(){
@@ -33,9 +36,12 @@ class Mage{
       maverick.action[i] = false; 
    }
   }
-  void jump(){
-    yPos += ySpeed;
-     ySpeed += yVelo;
+  void move(){
+    if(maverick.action[2]){
+      yPos += ySpeed;
+      ySpeed += yAcc;
+    }
+    xPos += xSpeed;
     
   }
   void addImages(){
