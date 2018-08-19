@@ -22,5 +22,4 @@ class Bot{
   void move(){
     xPos -= speed; 
   }
-  
 }
