@@ -106,11 +106,9 @@ void draw(){    //Loops at framerate, default is 60 fps
   }
   
 }
-
 void keyReleased(){
    maverick.xSpeed = 0;
 }
-
 void keyPressed(){
  if(key == CODED){
     if(keyCode == LEFT && keyPressed){
@@ -128,7 +126,6 @@ void keyPressed(){
     }else if(keyCode == DOWN){
       maverick.clearAction();
       maverick.action[3] = true;
-      
     }else if(keyCode == UP && keyPressed){
       maverick.clearAction();
       maverick.action[2] = true;
