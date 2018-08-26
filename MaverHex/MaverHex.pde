@@ -99,12 +99,10 @@ void draw(){    //Loops at framerate, default is 60 fps
   }else if(maverick.action[4]){                                //Dieing Action
     image(dieMage[imageCounter], maverick.xPos, maverick.yPos, width/8, height/6);
   }
-   
   ++imageCounter;
   if(imageCounter ==5){
     imageCounter = 0;
   }
-  
 }
 void keyReleased(){
    maverick.xSpeed = 0;
@@ -130,7 +128,5 @@ void keyPressed(){
       maverick.clearAction();
       maverick.action[2] = true;
     }
-      
- }
-  
+  }
 }
